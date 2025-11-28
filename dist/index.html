@@ -1,9 +1,8 @@
 <!--
   dist/index.html
 
-  用途：
-  - 生产环境静态入口页面，包含全面的 Open Graph / Twitter Card 元信息，确保社交平台在分享时能正确展示头像与名片信息；
-  - 当 JS 未加载时在 #app 区显示一个静态名片预览，方便社交抓取器和无 JS 场景。
+  用途：生产环境静态入口页面，包含完善的 Open Graph / Twitter Card 元信息和静态名片预览，
+  确保社交平台在分享时能正确展示头像与名片信息，并方便在无 JS 场景下显示预览。
 -->
 <!doctype html>
 <html lang="en">
@@ -11,20 +10,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Izabela Sobieska — Independent Financial Analyst & Investor</title>
-
     <!-- Basic -->
+    <title>Izabela Sobieska — Independent Financial Analyst & Investor</title>
     <meta name="description" content="Izabela Sobieska — Independent investor and financial analyst. 15+ years in multi-asset, FX/derivatives, crypto and real estate." />
     <link rel="canonical" href="https://izabela-sobieska.com/" />
+    <meta name="robots" content="index,follow" />
 
     <!-- Open Graph / Facebook / Telegram / WhatsApp -->
+    <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Izabela Sobieska — Independent Financial Analyst & Investor" />
     <meta property="og:description" content="Independent investor and financial analyst. 15+ years in multi-asset, FX/derivatives, crypto and real estate." />
     <meta property="og:url" content="https://izabela-sobieska.com/" />
     <meta property="og:site_name" content="Izabela Sobieska" />
 
-    <!-- 使用真实可访问的图片 URL（确保没有占位符） -->
+    <!-- ★ 统一使用真实可访问的绝对图片 URL（头像） -->
     <meta property="og:image" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
     <meta property="og:image:secure_url" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
     <meta property="og:image:alt" content="Portrait of Izabela Sobieska" />
@@ -68,6 +68,7 @@
       .card-right { width:160px; flex-shrink:0; }
       .avatar { width:160px; height:160px; object-fit:cover; border-radius:10px; display:block; }
       .meta-note { font-size:12px; color:#64748b; margin-top:10px; }
+      .debug-hint { max-width:900px; margin:8px auto 28px; font-size:13px; color:#334155; text-align:center; }
     </style>
   </head>
   <body>
@@ -80,7 +81,7 @@
           <p class="info">Independent investor and financial analyst with 15+ years in multi-asset, FX/derivatives, crypto and real estate.</p>
           <p class="info">Email: <a href="mailto:hello@izabela-sobieska.com">hello@izabela-sobieska.com</a></p>
           <a class="cta" href="mailto:hello@izabela-sobieska.com">Email Izabela</a>
-          <div class="meta-note">部署后请在 Facebook Sharing Debugger 粘贴你的 URL 并点击 "Scrape Again" 强制刷新分享卡片缓存。</div>
+          <div class="meta-note">部署后请在 Facebook Sharing Debugger 粘贴页面 URL 并点击 "Scrape Again" 强制刷新分享卡片缓存。</div>
         </div>
         <div class="card-right">
           <img class="avatar" src="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" alt="Portrait of Izabela Sobieska" />
@@ -88,9 +89,12 @@
       </div>
     </div>
 
+    <div class="debug-hint">
+      调试建议：部署后打开 Facebook Sharing Debugger（https://developers.facebook.com/tools/debug/），粘贴你的页面 URL，然后点击“Debug”，再点击“Scrape Again”。若仍然无法显示图片，请把 Debugger 的错误或警告截图/文字粘贴给我。
+    </div>
+
     <!-- React mount point -->
     <div id="root"></div>
-
     <script src="main-X24REXSI.js"></script>
   </body>
 </html>

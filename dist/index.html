@@ -1,85 +1,34 @@
 /**
- * @fileoverview 生产用 HTML（dist/index.html）。
- * 目的：为部署后的站点提供社交分享优化的 head meta（优先使用 Lisa 的肖像）。发布前请将 og:url / canonical 修改为你的生产域名（如有不同）。
+ * @fileoverview Root HTML (production). Minimal and English. Keeps OG meta pointing to Lisa's portrait.
+ * Purpose: Serve a clean production HTML that encourages crawlers to use the correct OG image.
  */
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Lisa Wang — Independent Investor & Financial Analyst</title>
-    <meta name="description" content="Values-driven investor and analytical thinker. An independent investor and financial analyst with over 13 years of experience in private wealth management, cryptocurrency day trading, forex and derivatives trading, and income-generating real estate investment." />
+    <meta name="description" content="Lisa Wang — Independent investor and financial analyst with 13+ years in global markets." />
     <link rel="canonical" href="https://lisa-wangs.com/" />
 
     <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="Lisa Wang" />
     <meta property="og:title" content="Lisa Wang — Independent Investor & Financial Analyst" />
-    <meta property="og:description" content="Values-driven investor and analytical thinker. 13+ years in private wealth management, crypto day trading, forex & derivatives, and income-generating real estate investment." />
+    <meta property="og:description" content="Values-driven investor and analytical thinker. 13+ years in global markets." />
     <meta property="og:url" content="https://lisa-wangs.com/" />
-
-    <!-- 优先肖像 -->
     <meta property="og:image" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
-    <meta property="og:image:secure_url" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
-    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="800" />
     <meta property="og:image:height" content="1000" />
-    <meta property="og:image:alt" content="Portrait of Lisa Wang" />
-
-    <!-- 备选横幅 -->
-    <meta property="og:image" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/860c316b-bb4a-4580-b7bb-f82b90cf80e7.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Lisa Wang — Independent Investor & Financial Analyst" />
-    <meta name="twitter:description" content="Values-driven investor and analytical thinker. 13+ years in private wealth management, crypto day trading, forex & derivatives, and income-generating real estate investment." />
+    <meta name="twitter:description" content="Values-driven investor and analytical thinker. 13+ years in global markets." />
     <meta name="twitter:image" content="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
-
     <link rel="image_src" href="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" />
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Lisa Wang",
-        "jobTitle": "Independent Investor & Financial Analyst",
-        "description": "Values-driven investor and analytical thinker. 13+ years in private wealth management, cryptocurrency day trading, forex and derivatives trading, and income-generating real estate investment.",
-        "image": "https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg",
-        "worksFor": { "@type": "Organization", "name": "Moomoo Technologies Inc." },
-        "email": "mailto:hello@lisa-wang.example"
-      }
-    </script>
-
-    <link href="main.css" rel="stylesheet">
-    <style>
-      .preview-card { max-width: 980px; margin: 28px auto; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; display: flex; gap: 20px; align-items: center; background: #ffffff; border-radius: 12px; padding: 20px; box-shadow: 0 8px 30px rgba(2,6,23,0.06); }
-      .preview-left { flex: 1; min-width: 0; }
-      .preview-name { font-size: 20px; font-weight: 800; color: #0b1220; margin: 0 0 6px; }
-      .preview-title { margin: 0 0 12px; color: #475569; font-size: 14px; }
-      .preview-meta { color:#334155; font-size:13px; margin:6px 0; }
-      .preview-cta { display:inline-block; margin-top:12px; background:#0ea5a4; color:#fff; padding:8px 14px; border-radius:999px; text-decoration:none; font-weight:700; }
-      .preview-right { width:220px; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
-      .preview-avatar { width:200px; height:200px; object-fit:cover; border-radius:10px; display:block; box-shadow: 0 6px 18px rgba(2,6,23,0.06); }
-      .quote { font-style: italic; color:#334155; margin-top:8px; font-size:13px; }
-      @media (max-width:720px){ .preview-card { flex-direction:column; align-items:flex-start; } .preview-right { width:100%; display:block; } .preview-avatar { width:100%; height:320px; border-radius:10px; } }
-      .note { color:#475569; font-size:13px; margin-top:10px; }
-      .kbd { background:#0b1220;color:#fff;padding:2px 6px;border-radius:6px;font-weight:700;font-size:12px; }
-    </style>
+    <link href="main.css" rel="stylesheet" />
   </head>
-
   <body>
-    <main class="preview-card" aria-label="Preview card">
-      <div class="preview-left">
-        <h1 class="preview-name">Lisa Wang</h1>
-        <p class="preview-title">Independent Investor & Financial Analyst</p>
-        <p class="preview-meta">13+ years in global markets · Focus: Crypto · FX · Derivatives · Real Estate</p>
-        <p class="quote">"Treat others with sincerity, enjoy life fully, and let new goals lead the next stage of growth."</p>
-        <a class="preview-cta" href="mailto:hello@lisa-wang.example" aria-label="Email Lisa">Email Lisa</a>
-        <p class="note">生产部署后：如果预览仍旧是旧图，请通过 <strong>@webpagebot</strong> 或向链接追加 ?v=2 以强制重新抓取。</p>
-      </div>
-      <div class="preview-right">
-        <img class="preview-avatar" src="https://pub-cdn.sider.ai/u/U005HE02679/web-coder/6928993ad9e33362d256fe21/resource/ca5006f2-cbe1-4a28-90f4-594ea31fa88d.jpg" alt="Portrait of Lisa Wang" />
-      </div>
-    </main>
+    <div id="app"></div>
+    <script src="main.js"></script>
   </body>
 </html>
